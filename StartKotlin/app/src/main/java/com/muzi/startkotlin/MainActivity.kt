@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         test()
         customLog("${maxOf(3,8)}")
+        collectionsTest()
+        UserInfo.age = 15
+        customLog("${UserInfo.age} - ${UserInfo.name}")
     }
 
     fun functionParams(a: Int, b: Int): Int {
