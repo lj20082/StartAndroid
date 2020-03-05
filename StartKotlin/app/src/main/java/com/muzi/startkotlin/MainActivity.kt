@@ -1,7 +1,7 @@
 package com.muzi.startkotlin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.solver.widgets.Rectangle
 
 class MainActivity : AppCompatActivity() {
@@ -10,10 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         test()
-        customLog("${maxOf(3,8)}")
-        collectionsTest()
-        UserInfo.age = 15
-        customLog("${UserInfo.age} - ${UserInfo.name}")
     }
 
     fun functionParams(a: Int, b: Int): Int {
@@ -43,7 +39,18 @@ class MainActivity : AppCompatActivity() {
         val s1 = "s1 is $hisAge"
         hisAge = 2
         val s2 = "${s1.replace("is","was")}, but now is $hisAge"
-        println("MUZI12580: $s2")
+        LogHelper().logInfo(s2)
+        LogHelper().logInfo(maxOf(3,8))
+        collectionsTest()
+        UserInfo.age = 15
+        LogHelper().logInfo("age is ${UserInfo.age}, name is ${UserInfo.name}")
+        Example().printFunctionType()
+        Example().printFunctionType(1)
+        Example.printCompanion()
+        val list = listOf("red","green","blue")
+        list.getLongestString()
+
+        Connection(Host("kotl.in"),443).connect()
     }
 
     fun maxOf(a: Int, b: Int): Int = if(a > b) a else b
