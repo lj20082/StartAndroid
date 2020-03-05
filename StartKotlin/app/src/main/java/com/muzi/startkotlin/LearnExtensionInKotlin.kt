@@ -53,4 +53,4 @@ class Connection(val host: Host, val port: Int) {
 }
 
 open class BaseObj{}
-class Derived : Base {}
+class DerivedObj : BaseObj() {}
